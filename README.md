@@ -1,7 +1,7 @@
 # keewird
 A clone of the `keyword` game, which my lovely wife ~~elbows me out of the way~~ plays at the first opportunity.
 
-This uses the ncurses library so that it can be used in a bash terminal.  (I finally have an excuse to learn ncurses.  Too bad I had to retire to get here.)
+This uses the C ncurses library so that it can be used in a bash terminal.  (I finally have an excuse to learn ncurses.  Too bad I had to retire to get here.)
 
 Eventually, the finished product will be implemented in a container.
 
