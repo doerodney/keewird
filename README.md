@@ -3,10 +3,10 @@ A clone of the `keyword` game, which my lovely wife ~~elbows me out of the way~~
 
 This uses the ncurses library so that it can be used in a bash terminal.  (I finally have an excuse to learn ncurses.  Too bad I had to retire to get here.)
 
-Eventually, the finished product will be implemented to a container.
+Eventually, the finished product will be implemented in a container.
 
 ## Dependencies
-This requires:
+To build locally, this requires:
 * Installation of the ncurses library.
 * Installation of the wamerican word list.
 
