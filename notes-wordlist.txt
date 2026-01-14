@@ -1,0 +1,21 @@
+# Word List Woes
+Will select words that are of length 3-6
+
+## /usr/share/dict/words: 104334 lines
+Problems:
+* Has plural of nouns
+* Has possessives of nouns
+* Has present participles of verbs (seeing, reading, thinking, cursing)
+* Has acronyms (always UPPPER CASE)
+* Has names (always Title case)
+Examples:
+zygote
+zygote's
+zygotes
+ACLU
+Aimee
+
+Tactic:
+- Filter possessives with grep -v "'".
+- Filter acronyms by detection of upper case.
+- Filter names by title case.
