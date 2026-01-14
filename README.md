@@ -30,7 +30,7 @@ Your task is to select the word represented by the underscores that completes th
 - hea_th can be completed with l or r
 - butt_er can only be completed with e
 
-
+The word `circle` satisfies all of these conditions.  Do you get it?
 
 ## Dependencies
 To build locally, this requires:
