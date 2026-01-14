@@ -23,9 +23,9 @@ w   u m h
 ```
 
 Your task is to select the word represented by the underscores that completes the partial words that appear.  For example:
-- _ow could be completed with b, c, h, l, m, n, p, r, s, t, v, or w
+- _ow can be completed with b, c, h, l, m, n, p, r, s, t, v, or w
 - reta_n can only be completed with i
-- _ound can be completed with b, f, m, p, r, pr s
+- _ound can be completed with b, f, m, p, r, or s
 - _ombat can be completed with c or w
 - hea_th can be completed with l or r
 - butt_er can only be completed with e
