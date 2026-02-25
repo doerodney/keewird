@@ -26,6 +26,53 @@ sub binary_search {
 }
 
 
+sub filter_apostrophes {
+  my ($srcPath, $destPath) = @_;
+
+  open(SRC, "<$srcPath") or die "Cannot read from $srcPath";
+  my @srcLines = <SRC>;
+  chomp(@srcLines);
+  close(SRC);
+
+  my $nSrcLines = scalar(@srcLines);
+  print "Apostrophe filter: $nSrcLines source lines detected\n";
+
+  open(DEST, ">$destPath") or die "Cannot write to $destPath";
+
+  # Block any line that contains a single quote:
+  foreach my $srcLine (@srcLines) {
+    if (index($srcLine, "'") < 0)  {
+      print DEST "$srcLine\n";
+    }
+  }
+
+  close(DEST);
+}
+
+sub filter_upper_case {
+  my ($srcPath, $destPath) = @_;
+
+  open(SRC, "<$srcPath") or die "Cannot read from $srcPath";
+  my @srcLines = <SRC>;
+  chomp(@srcLines);
+  close(SRC);
+
+  my $nSrcLines = scalar(@srcLines);
+  print "Upper case filter: $nSrcLines source lines detected\n";
+
+  open(DEST, ">$destPath") or die "Cannot write to $destPath";
+
+  # Block any line that starts with A-Z:
+  foreach my $srcLine (@srcLines) {
+    if (!($srcLine =~ /^[A-Z]/)) {
+      print DEST "$srcLine\n";
+    }
+  }
+
+  close(DEST);
+}
+
+
 sub filter_word_length {
   my ($srcPath, $destPath) = @_;
 
@@ -88,9 +135,17 @@ sub testBinSearch {
 #---main-----------------------------------------------------------------------
 
 my $wordListPath = '/usr/share/dict/words';
-my $stageLengthResultPath = 'stage-length-out.txt';
+# my $stageLengthResultPath = 'stage-length-out.txt';
+my $stageLowerCasePath = 'stage-lowercase-out.txt';
+my $stageNoApostrophePath = 'stage-no-apostrophes-out.txt';
 
 # Filter for word length:
-filter_word_length($wordListPath, $stageLengthResultPath);
+# filter_word_length($wordListPath, $stageLengthResultPath);
+
+# Filter out any words with apostrophe (single quote):
+filter_apostrophes($wordListPath, $stageNoApostrophePath);
+
+# Filter that allows only lowercase words:
+filter_upper_case($stageNoApostrophePath, $stageLowerCasePath); 
 
 
